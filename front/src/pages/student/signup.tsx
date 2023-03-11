@@ -6,7 +6,7 @@ const signup: Component = () => {
         <div class='container'>
             <div class="form">
                 <h1 class='header'>Inscription</h1>
-                <input type="text" class='matricule'  placeholder='votre matricule'/><br />
+                <input type="text" class='matricule'  placeholder='votre matricule' /><br />
                 <button class='sign'>Sign up</button>
             </div>
         </div>
