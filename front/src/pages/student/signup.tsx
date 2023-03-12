@@ -1,13 +1,14 @@
 import { Component, createSignal } from 'solid-js';
 import { useNavigate } from "solid-app-router";
 import Axios from "axios";
-import './signup.css'
-const [matricule,setregi_number]=createSignal('');
+import './signup.css';
+
+export const [matricule,setregi_number]=createSignal('');
 
 
 const signup: Component = () => {
 
-    
+    const navigate=useNavigate();
 
     function signup(){
         console.log(matricule());
@@ -17,16 +18,14 @@ const signup: Component = () => {
             if(response.status ==200)
             {
                 console.log("mrigla");
-                localStorage.setItem("auth",JSON.stringify(response.data))
+                localStorage.setItem("auth",JSON.stringify(response.data));
+                localStorage.setItem("studentId",matricule())
+                navigate('/studentqrcode')
             }
-            if(response.status ==400){
-                alert("mmmmm");
-                
-            }
-            
           })
           .catch( (error)=> {
             console.log(error);
+            alert("aaaa")
           });
     }
 

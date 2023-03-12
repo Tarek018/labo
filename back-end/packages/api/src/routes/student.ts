@@ -25,7 +25,7 @@ Router.post('/login',async(req,res)=>{
         res.status(400).json({ message: 'User does not exist.' })
       }else{
         const token = jwt.sign({ userId: student._id}, "12345");
-      res.status(200).json({ auth: true, token: token, type: "student" });
+        res.status(200).json({ auth: true, token: token, type: "student" });
       }
 })
 

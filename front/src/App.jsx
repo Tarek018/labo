@@ -1,10 +1,16 @@
 import logo from './logo.svg';
 import Sign from'./pages/student/signup'
+import { Routes,Route } from "solid-app-router";
+import Qrcode from './pages/student/qrcode';
+
 
 function App() {
   return (
     <>
-      <Sign />
+      <Routes>
+        <Route path='/' component={Sign}></Route>
+        <Route path='/studentqrcode' component={Qrcode}></Route>
+      </Routes>
     </>
   );
 }
