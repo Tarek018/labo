@@ -3,10 +3,13 @@ import { useNavigate } from "solid-app-router";
 import Axios from "axios";
 import './signup.css';
 
+
 export const [matricule,setregi_number]=createSignal('');
 
 
 const signup: Component = () => {
+
+    
 
     const navigate=useNavigate();
 
