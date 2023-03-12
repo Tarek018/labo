@@ -5,6 +5,14 @@ import { Router } from "solid-app-router";
 import './index.css';
 import App from './App';
 
+// check if user is teacher
+const url_string = window.location.href;
+const url = new URL(url_string);
+const user = url.searchParams.get("user");
+if (Boolean(user))
+  localStorage.setItem("user", user);
+/////////////
+
 const root = document.getElementById('root');
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {

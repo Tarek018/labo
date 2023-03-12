@@ -3,8 +3,8 @@ import qrcode from 'qrcode';
 import { useNavigate } from "solid-app-router";
 
 
-import { matricule } from "./signup";
-import { QrCode } from '@suid/icons-material';
+/* import { matricule } from "./signup";
+import { QrCode } from '@suid/icons-material'; */
 
 const Qrcode: Component = () => {
     let  [qrCodee,setqrCode]=createSignal('')
