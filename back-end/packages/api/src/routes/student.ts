@@ -15,16 +15,17 @@ Router.post('/login',async(req,res)=>{
     let student=await db.find({
         selector: {
             matricule: {
-                $eq :req.body.matricule
+                $eq :req.body
           }
         }
       });
     
       if(student.docs == ''){
+        console.log(req.body);
         res.status(400).json({ message: 'User does not exist.' })
       }else{
         const token = jwt.sign({ userId: student._id}, "12345");
-      res.status(200).json({ auth: true, token: token, uid: student._id, type: "user" });
+      res.status(200).json({ auth: true, token: token, type: "student" });
       }
 })
 

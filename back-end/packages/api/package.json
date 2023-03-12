@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "hyper-express": "^6.5.8",
     "jsonwebtoken": "^9.0.0",
     "pouchdb": "^8.0.1",

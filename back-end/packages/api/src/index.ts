@@ -1,6 +1,8 @@
 import HyperExpress from 'hyper-express';
 const webserver = new HyperExpress.Server();
 
+var cors = require('cors')
+webserver.use(cors())
 
 // Create GET route to serve 'Hello World'
 webserver.get('/', (request, response) => {
