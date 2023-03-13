@@ -1,4 +1,4 @@
-import { Component, createEffect, createResource, createSignal, onMount  } from 'solid-js';
+import { Component, createEffect, createResource, createSignal, onMount,For  } from 'solid-js';
 import QrScannerr from 'qr-scanner/qr-scanner.umd.min.js';
 import QrScanner from 'qr-scanner';
 import  useRef  from 'solid-js';
@@ -10,7 +10,17 @@ import Pouchdb from "pouchdb";
 
 
 
+interface StdInterface {
+    _id: string,
+            _rev: string,
+            matricule: string,
+            nom: string,
+            spec: string,
+            groupe: Array<number>,
+            teacher: string,
+            dataType: string
 
+}
 
 const teacherdash: Component = () => {
     let videoElem:any;
@@ -23,7 +33,7 @@ const teacherdash: Component = () => {
 
     onMount(() => {
 
-         Axios.post(`http://127.0.0.1:8080/student/teacher/${params.user}`)
+         Axios.post(`http://127.0.0.1:8080/teacher/${params.user}`)
          .then( (response)=> {
            console.log(response);
          })
@@ -52,8 +62,29 @@ const teacherdash: Component = () => {
     .catch(error => console.log(error || 'No QR code found.'));
     
    }
+   const [group,setgroupe]=createSignal([])
+   const [std, setStd] = createSignal([])
    createEffect(()=>{
-    Axios.get('')
+    Axios.post(`http://127.0.0.1:8080/teacher/${params.user}`)
+    .then( (response)=> {
+        setgroupe(response.data.group);
+        setStd(response.data.Etud);
+        console.log(group());
+        console.log(std());
+
+      })
+      .catch( (error)=> {
+        console.log(error);
+        navigate('/');
+        return;
+      });
+
+     // console.log(group()[0])
+
+
+      
+      
+
    })
    
    
@@ -74,6 +105,47 @@ const teacherdash: Component = () => {
                                           border: none;
                                           border-radius: 10px;'
             >Scan</button>
+
+
+<table>
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Group</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <For each={std()}>{(post: StdInterface,i)=>
+          
+               
+                       
+                        <tr>
+                            {
+                                
+                            post.nom
+                            
+
+                            
+                            }
+                            
+                        </tr>
+
+                      
+                   
+
+               
+
+           
+                }
+            </For>
+                        
+                    </tbody>
+                </table>
+
+            
+        
+
         </div>
     )
 }

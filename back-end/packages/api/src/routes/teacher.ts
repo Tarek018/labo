@@ -16,22 +16,21 @@ Router.post('/:user', async (req , res) =>  {
     selector: {
       dataType:"teacher",
       matricule: id,
-
     }
   });
 
-  let Etud=db.find({
+  let Etud= await db.find({
     selector:{
       dataType:"idStudent",
       teacher:matricule.docs[0].name
     }
   });
-  console.log(Etud.docs);
+  console.log(matricule.docs[0].gr);
   
   if(matricule.docs == ''){
-    res.status(400).json({Etud:Etud.docs , message: 'User does not exist.' })
+    res.status(400).json({ message: 'User does not exist.' })
   }else{
-    res.status(200).json({ message: 'User  exist.' });
+    res.status(200).json({Etud:Etud.docs,group:matricule.docs[0].gr, message: 'User  exist.' });
   }
 
   matricule.docs.name
