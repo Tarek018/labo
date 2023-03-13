@@ -6,7 +6,7 @@ import { useParams } from 'solid-app-router';
 import { useNavigate } from "solid-app-router";
 import Axios from "axios";
 //import { useRef } from 'solid-js';
-import Pouchdb from "pouchdb-browser";
+import Pouchdb from "pouchdb";
 
 
 
@@ -20,7 +20,6 @@ const teacherdash: Component = () => {
 
     const params = useParams() ;
 
-    var mydate=new Pouchdb('data');
 
     onMount(() => {
 
@@ -53,6 +52,9 @@ const teacherdash: Component = () => {
     .catch(error => console.log(error || 'No QR code found.'));
     
    }
+   createEffect(()=>{
+    Axios.get('')
+   })
    
    
     

@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 
 
 
-Router.post('/:user', async(req, res) => {
+Router.post('/:user', async (req , res) =>  {
   let id: string = req.params.user;
   console.log(id);
   
@@ -20,15 +20,32 @@ Router.post('/:user', async(req, res) => {
     }
   });
 
+  let Etud=db.find({
+    selector:{
+      dataType:"idStudent",
+      teacher:matricule.docs[0].name
+    }
+  });
+  console.log(Etud.docs);
   
   if(matricule.docs == ''){
-    res.status(400).json({ message: 'User does not exist.' })
+    res.status(400).json({Etud:Etud.docs , message: 'User does not exist.' })
   }else{
     res.status(200).json({ message: 'User  exist.' });
   }
+
+  matricule.docs.name
   
   
-})
+  
+});
+
+Router.get('/getmyetu', async (req ,res) => {
+
+  const db = new Pouchdb('http://admin:admin@127.0.0.1:5984/labo');
+
+
+});
 
 
 
