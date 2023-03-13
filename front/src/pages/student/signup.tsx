@@ -17,18 +17,16 @@ const signup: Component = () => {
         console.log(matricule());
         Axios.post('http://127.0.0.1:8080/student/login',JSON.stringify(matricule()))
           .then( (response)=> {
-            console.log(response);
-            if(response.status ==200)
-            {
+                console.log(response);
                 console.log("mrigla");
                 localStorage.setItem("auth",JSON.stringify(response.data));
                 localStorage.setItem("studentId",matricule())
                 navigate('/studentqrcode')
-            }
+            
           })
           .catch( (error)=> {
             console.log(error);
-            alert("aaaa")
+            alert("Matricule incorrect")
           });
     }
 

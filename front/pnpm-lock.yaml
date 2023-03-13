@@ -1,8 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/pouchdb': ^6.4.0
   axios: ^1.3.4
+  es6-shim: ^0.35.7
   pouchdb: ^8.0.1
+  pouchdb-browser: ^8.0.1
   qr-scanner: ^1.4.2
   qrcode: ^1.5.1
   solid-app-router: ^0.4.2
@@ -12,13 +15,16 @@ specifiers:
 
 dependencies:
   axios: 1.3.4
+  es6-shim: 0.35.7
   pouchdb: 8.0.1
+  pouchdb-browser: 8.0.1
   qr-scanner: 1.4.2
   qrcode: 1.5.1
   solid-app-router: 0.4.2_solid-js@1.6.14
   solid-js: 1.6.14
 
 devDependencies:
+  '@types/pouchdb': 6.4.0
   vite: 4.1.1
   vite-plugin-solid: 2.5.0_solid-js@1.6.14+vite@4.1.1
 
@@ -575,9 +581,148 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /@types/debug/4.1.7:
+    resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
+    dependencies:
+      '@types/ms': 0.7.31
+    dev: true
+
+  /@types/ms/0.7.31:
+    resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
+    dev: true
+
   /@types/offscreencanvas/2019.7.0:
     resolution: {integrity: sha512-PGcyveRIpL1XIqK8eBsmRBt76eFgtzuPiSTyKHZxnGemp2yzGzWpjYKAfK3wIMiU7eH+851yEpiuP8JZerTmWg==}
     dev: false
+
+  /@types/pouchdb-adapter-cordova-sqlite/1.0.1:
+    resolution: {integrity: sha512-nqlXpW1ho3KBg1mUQvZgH2755y3z/rw4UA7ZJCPMRTHofxGMY8izRVw5rHBL4/7P615or0J2udpRYxgkT3D02g==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-adapter-fruitdown/6.1.3:
+    resolution: {integrity: sha512-Wz1Z1JLOW1hgmFQjqnSkmyyfH7by/iWb4abKn684WMvQfmxx6BxKJpJ4+eulkVPQzzgMMSgU1MpnQOm9FgRkbw==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-adapter-http/6.1.3:
+    resolution: {integrity: sha512-9Z4TLbF/KJWy/D2sWRPBA+RNU0odQimfdvlDX+EY7rGcd3aVoH8qjD/X0Xcd/0dfBH5pKrNIMFFQgW/TylRCmA==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-adapter-idb/6.1.4:
+    resolution: {integrity: sha512-KIAXbkF4uYUz0ZwfNEFLtEkK44mEWopAsD76UhucH92XnJloBysav+TjI4FFfYQyTjoW3S1s6V+Z14CUJZ0F6w==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-adapter-leveldb/6.1.3:
+    resolution: {integrity: sha512-ex8NFqQGFwEpFi7AaZ5YofmuemfZNsL3nTFZBUCAKYMBkazQij1pe2ILLStSvJr0XS0qxgXjCEW19T5Wqiiskg==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-adapter-localstorage/6.1.3:
+    resolution: {integrity: sha512-oor040tye1KKiGLWYtIy7rRT7C2yoyX3Tf6elEJRpjOA7Ja/H8lKc4LaSh9ATbptIcES6MRqZDxtp7ly9hsW3Q==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-adapter-memory/6.1.3:
+    resolution: {integrity: sha512-gVbsIMzDzgZYThFVT4eVNsmuZwVm/4jDxP1sjlgc3qtDIxbtBhGgyNfcskwwz9Zu5Lv1avkDsIWvcxQhnvRlHg==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-adapter-node-websql/6.1.3:
+    resolution: {integrity: sha512-F/P+os6Jsa7CgHtH64+Z0HfwIcj0hIRB5z8gNhF7L7dxPWoAfkopK5H2gydrP3sQrlGyN4WInF+UJW/Zu1+FKg==}
+    dependencies:
+      '@types/pouchdb-adapter-websql': 6.1.4
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-adapter-websql/6.1.4:
+    resolution: {integrity: sha512-zMJQCtXC40hBsIDRn0GhmpeGMK0f9l/OGWfLguvczROzxxcOD7REI+e6SEmX7gJKw5JuMvlfuHzkQwjmvSJbtg==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-browser/6.1.3:
+    resolution: {integrity: sha512-EdYowrWxW9SWBMX/rux2eq7dbHi5Zeyzz+FF/IAsgQKnUxgeCO5VO2j4zTzos0SDyJvAQU+EYRc11r7xGn5tvA==}
+    dependencies:
+      '@types/pouchdb-adapter-http': 6.1.3
+      '@types/pouchdb-adapter-idb': 6.1.4
+      '@types/pouchdb-adapter-websql': 6.1.4
+      '@types/pouchdb-core': 7.0.11
+      '@types/pouchdb-mapreduce': 6.1.7
+      '@types/pouchdb-replication': 6.4.4
+    dev: true
+
+  /@types/pouchdb-core/7.0.11:
+    resolution: {integrity: sha512-KTKj0Taf8pLTj8eW3qBtCd1Fh+/yhEyVo6/1czTN46MnseobdmnqgXtzaKgHMbuLouh+SHK1vM++aMPaG1qTTA==}
+    dependencies:
+      '@types/debug': 4.1.7
+      '@types/pouchdb-find': 7.3.0
+    dev: true
+
+  /@types/pouchdb-find/7.3.0:
+    resolution: {integrity: sha512-sFPli5tBjGX9UfXioik1jUzPdcN84eV82n0lmEFuoPepWqkLjQcyri0eOa++HYOaNPyMDhKFBqEALEZivK2dRg==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-http/6.1.3:
+    resolution: {integrity: sha512-0e9E5SqNOyPl/3FnEIbENssB4FlJsNYuOy131nxrZk36S+y1R/6qO7ZVRypWpGTqBWSuVd7gCsq2UDwO/285+w==}
+    dependencies:
+      '@types/pouchdb-adapter-http': 6.1.3
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-mapreduce/6.1.7:
+    resolution: {integrity: sha512-WzBwm7tmO9QhfRzVaWT4v6JQSS/fG2OoUDrWrhX87rPe2Pn6laPvdK5li6myNRxCoI/l5e8Jd+oYBAFnaiFucA==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+    dev: true
+
+  /@types/pouchdb-node/6.1.4:
+    resolution: {integrity: sha512-wnTCH8X1JOPpNOfVhz8HW0AvmdHh6pt40MuRj0jQnK7QEHsHS79WujsKTKSOF8QXtPwpvCNSsI7ut7H7tfxxJQ==}
+    dependencies:
+      '@types/pouchdb-adapter-http': 6.1.3
+      '@types/pouchdb-adapter-leveldb': 6.1.3
+      '@types/pouchdb-core': 7.0.11
+      '@types/pouchdb-mapreduce': 6.1.7
+      '@types/pouchdb-replication': 6.4.4
+    dev: true
+
+  /@types/pouchdb-replication/6.4.4:
+    resolution: {integrity: sha512-BsE5LKpjJK4iAf6Fx5kyrMw+33V+Ip7uWldUnU2BYrrvtR+MLD22dcImm7DZN1st2wPPb91i0XEnQzvP0w1C/Q==}
+    dependencies:
+      '@types/pouchdb-core': 7.0.11
+      '@types/pouchdb-find': 7.3.0
+    dev: true
+
+  /@types/pouchdb/6.4.0:
+    resolution: {integrity: sha512-eGCpX+NXhd5VLJuJMzwe3L79fa9+IDTrAG3CPaf4s/31PD56hOrhDJTSmRELSXuiqXr6+OHzzP0PldSaWsFt7w==}
+    dependencies:
+      '@types/pouchdb-adapter-cordova-sqlite': 1.0.1
+      '@types/pouchdb-adapter-fruitdown': 6.1.3
+      '@types/pouchdb-adapter-http': 6.1.3
+      '@types/pouchdb-adapter-idb': 6.1.4
+      '@types/pouchdb-adapter-leveldb': 6.1.3
+      '@types/pouchdb-adapter-localstorage': 6.1.3
+      '@types/pouchdb-adapter-memory': 6.1.3
+      '@types/pouchdb-adapter-node-websql': 6.1.3
+      '@types/pouchdb-adapter-websql': 6.1.4
+      '@types/pouchdb-browser': 6.1.3
+      '@types/pouchdb-core': 7.0.11
+      '@types/pouchdb-http': 6.1.3
+      '@types/pouchdb-mapreduce': 6.1.7
+      '@types/pouchdb-node': 6.1.4
+      '@types/pouchdb-replication': 6.4.4
+    dev: true
 
   /abort-controller/3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -829,6 +974,10 @@ packages:
     hasBin: true
     dependencies:
       prr: 1.0.1
+    dev: false
+
+  /es6-shim/0.35.7:
+    resolution: {integrity: sha512-baZkUfTDSx7X69+NA8imbvGrsPfqH0MX7ADdIDjqwsI8lkTgLIiD2QWrUCSGsUQ0YMnSCA/4pNgSyXdnLHWf3A==}
     dev: false
 
   /esbuild/0.16.17:
@@ -1205,6 +1354,15 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: true
+
+  /pouchdb-browser/8.0.1:
+    resolution: {integrity: sha512-wXObS1Layd/gBRKwa6EBS99tFY9G3VPaMRu8ffWCohkpi9PZCm3z1xeB4P4S9Qecf0u5so+rxvbVVyTtgdhvaQ==}
+    dependencies:
+      immediate: 3.3.0
+      spark-md5: 3.0.2
+      uuid: 8.3.2
+      vuvuzela: 1.0.3
+    dev: false
 
   /pouchdb/8.0.1:
     resolution: {integrity: sha512-xp5S83JOQn2NAL0ZQ5CU+DI26V9/YrYuVtkXnbGEIDrYiFfj5A8gAcfbxefXb/9O+Qn4n5RaT/19+8UBSZ42sw==}

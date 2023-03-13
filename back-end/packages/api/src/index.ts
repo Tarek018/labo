@@ -9,9 +9,12 @@ webserver.get('/', (request, response) => {
     response.send('Hello World');
 })
 const usersRoute=require('./routes/student');
+const teacherRoute=require('./routes/teacher');
 
 
 webserver.use('/student',usersRoute);
+webserver.use('/teacher',teacherRoute);
+
 
 
 // Activate webserver by calling .listen(port, callback);

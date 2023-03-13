@@ -5,13 +5,16 @@ import Qrcode from './pages/student/qrcode';
 import teacherdash from './pages/teacher/teacherdash';
 
 
+
+
+
 function App() {
   return (
     <>
       <Routes>
         <Route path='/' component={Sign}></Route>
         <Route path='/studentqrcode' component={Qrcode}></Route>
-        <Route path='/teacher' component={teacherdash}></Route>
+        <Route path='/teacher/:user' component={teacherdash}></Route>
       </Routes>
     </>
   );
