@@ -1,8 +1,8 @@
-import { Component, createSignal } from 'solid-js';
+import { Component, createEffect, createSignal, onMount } from 'solid-js';
 import { useNavigate } from "solid-app-router";
 import Axios from "axios";
 import './signup.css';
-
+import Pouchdb from "pouchdb-browser";
 
 export const [matricule,setregi_number]=createSignal('');
 
@@ -13,6 +13,21 @@ const signup: Component = () => {
 
     const navigate=useNavigate();
 
+    createEffect( () => {
+
+        console.log("sss");
+        let mydata=new Pouchdb("data");
+        mydata.post({"nom":"qwerty"});
+        console.log(mydata);
+
+    })
+
+    onMount(
+        () => {
+            
+        }
+    )
+
     function signup(){
         console.log(matricule());
         Axios.post('http://127.0.0.1:8080/student/login',JSON.stringify(matricule()))
@@ -22,7 +37,7 @@ const signup: Component = () => {
                 localStorage.setItem("auth",JSON.stringify(response.data));
                 localStorage.setItem("studentId",matricule())
                 navigate('/studentqrcode')
-            
+                
           })
           .catch( (error)=> {
             console.log(error);

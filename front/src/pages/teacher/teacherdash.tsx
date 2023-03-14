@@ -6,7 +6,9 @@ import { useParams } from 'solid-app-router';
 import { useNavigate } from "solid-app-router";
 import Axios from "axios";
 //import { useRef } from 'solid-js';
-import Pouchdb from "pouchdb";
+
+
+
 
 
 
@@ -32,6 +34,7 @@ const teacherdash: Component = () => {
 
 
     onMount(() => {
+
 
          Axios.post(`http://127.0.0.1:8080/teacher/${params.user}`)
          .then( (response)=> {
@@ -60,6 +63,8 @@ const teacherdash: Component = () => {
     QrScanner.scanImage(videoElem)
     .then(result => setidstudent(result))
     .catch(error => console.log(error || 'No QR code found.'));
+    
+    
     
    }
    const [group,setgroupe]=createSignal([])
