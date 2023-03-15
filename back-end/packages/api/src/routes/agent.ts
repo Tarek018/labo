@@ -56,7 +56,22 @@ Router.post('/verifybyid',async (req, res) => {
 
 Router.post('/validateqrcode',async (req, res) => {
     req.body = await req.json();
+    const db = await new Pouchdb('http://admin:admin@127.0.0.1:5984/labo');
+
     console.log(req.body);
+    let userexist=await db.find({
+        selector:{
+            ID:req.body
+        }
+    });
+    if(userexist.docs == ''){
+        console.log(req.body);
+        res.status(400).json({ message: "Not Allowed" })
+     }else{
+       console.log(userexist.docs);
+       res.status(200).json({ message: "Allowed" });
+   }
+
     
 })
 
