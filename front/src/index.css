@@ -1,4 +1,5 @@
 body {
+  background-color: #e0dede;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -15,4 +16,64 @@ code {
 .logo
 {
   background-color: brown;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.img {
+  width: 262px;
+    height: 243px;
+    margin: 77px;
+}
+.header {
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+    color: #1976d2;
+}
+input {
+  padding: 13px;
+  border: nono;
+  border: none;
+  outline: none;
+  margin: 22px;
+  font-size: 25px;
+
+}
+input::placeholder {
+  color: #999; /* Couleur du texte */
+  font-style: italic; /* Style de texte (par exemple, italique) */
+  font-size: 20x; /* Taille de texte */
+  font-weight: normal; /* Poids de texte */
+  text-align: center; /* Alignement du texte */
+}
+.button-insecrption {
+  padding: 10px;
+  width: fit-content;
+  left: 120px;
+}
+.admin-login {
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+
+}
+.button-login-admin{
+  left: 110px;
+    padding: 10px;
+}
+.qrcode{
+  position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        height: 350px;
 }
