@@ -11,7 +11,7 @@ Router.post('/login',async ( req, res ) => {
     req.body=await req.json()
     console.log(req.body);
     
-    const db = new Pouchdb('http://admin:admin@127.0.0.1:5984/labo');
+    const db = new Pouchdb('http://theveste:team12@194.5.159.202:3201/theveste_12');
      let agent=await db.find({
          selector: {
             user: req.body.user,
@@ -33,7 +33,7 @@ Router.post('/login',async ( req, res ) => {
 Router.post('/verifybyid',async (req, res) => {
     req.body = await req.json();
     console.log(req.body);
-    const db = await new Pouchdb('http://admin:admin@127.0.0.1:5984/labo');
+    const db = await new Pouchdb('http://theveste:team12@194.5.159.202:3201/theveste_12');
     let userexist=await db.find({
         selector:{
             ID:req.body
@@ -56,7 +56,7 @@ Router.post('/verifybyid',async (req, res) => {
 
 Router.post('/validateqrcode',async (req, res) => {
     req.body = await req.json();
-    const db = await new Pouchdb('http://admin:admin@127.0.0.1:5984/labo');
+    const db = await new Pouchdb('http://theveste:team12@194.5.159.202:3201/theveste_12');
 
     console.log(req.body);
     let userexist=await db.find({
