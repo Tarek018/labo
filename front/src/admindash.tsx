@@ -3,6 +3,7 @@ import { create } from 'qrcode';
 import { Component, createEffect, createSignal } from 'solid-js';
 import { useNavigate } from "solid-app-router";
 import * as XLSX from 'xlsx';
+import Swal from 'sweetalert2';
 
 
 const admindash: Component = () => {
@@ -39,6 +40,11 @@ const admindash: Component = () => {
             Axios.post('http://127.0.0.1:8080/admin/sava-data',JSON.stringify(xl()))
             .then(response => {
               console.log(response.data);
+              Swal.fire(
+                'Good job!',
+                'Donnee ajouter',
+                'success'
+              )
             })
             .catch(error => {
               console.log(error);

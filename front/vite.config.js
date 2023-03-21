@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { VitePWA } from 'vite-plugin-pwa'
+import {  } from "solid-js";
+
+
 
 export default defineConfig({
   plugins: [solidPlugin(
@@ -17,7 +20,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
     rollupOptions: {
-      external: ['solid-js',"solid-js/web","solid-js/store"],
+      external: ['./solid-js',"./solid-js/web","./solid-js/store"],
     },
   },
   

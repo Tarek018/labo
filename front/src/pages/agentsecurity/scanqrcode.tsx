@@ -25,7 +25,8 @@ const scanqrcode: Component = () => {
         //videoElem = new HTMLVideoElement;
         const qrScanner = new QrScanner(
             videoElem,
-            result => console.log('decoded qr code:', result),
+            result =>{ console.log('decoded qr code:', result); setid(result.data)},
+            
             { /* your options or returnDetailedScanResult: true if you're not specifying any other options */ },
             );
         qrScanner.start();
@@ -34,8 +35,11 @@ const scanqrcode: Component = () => {
         navigate('/verifybyid');
     }
     function scan(){
+        console.log(id());
+        
         QrScanner.scanImage(videoElem)
-        .then(result => setid(result))
+        .then(result => console.log(result)
+        )
         .catch(error => console.log(error || 'No QR code found.'));
         Axios.post('',JSON.stringify(id()))
         .then( (response)=> {

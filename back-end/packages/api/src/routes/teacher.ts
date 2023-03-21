@@ -11,7 +11,7 @@ Router.post('/:user', async (req , res) =>  {
   let id: string = req.params.user;
   console.log(id);
   
-  const db = new Pouchdb('http://theveste:team12@194.5.159.202:3201/theveste_12');
+  const db = new Pouchdb('http://admin:admin@127.0.0.1:5984/labo');
   let matricule = await db.find({
     selector: {
       dataType:"teacher",
@@ -38,6 +38,7 @@ Router.post('/:user', async (req , res) =>  {
   
   
 });
+
 
 
 

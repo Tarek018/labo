@@ -11,7 +11,7 @@ Router.post('/login',async ( req, res ) => {
     req.body=await req.json()
     console.log(req.body);
     
-    const db = new Pouchdb('http://theveste:team12@194.5.159.202:3201/theveste_12');
+    const db = new Pouchdb('http://admin:admin@127.0.0.1:5984/labo');
      let admin=await db.find({
          selector: {
             user: req.body.user,
@@ -31,7 +31,7 @@ Router.post('/login',async ( req, res ) => {
 })
 
 Router.post('/sava-data' ,async(req, res) => {
-    const db = new Pouchdb('http://theveste:team12@194.5.159.202:3201/theveste_12');
+    const db = new Pouchdb('http://admin:admin@127.0.0.1:5984/labo');
     req.body=await req.json();
     db.post(req.body);
     res.status(200);
